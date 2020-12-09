@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
-  const listMenu = ['home', 'profile', 'contact', 'infoCorona'];
+  const listMenu = ['Home', 'Profile', 'Contact', 'Info Corona'];
   return (
     <div className="header">
       {listMenu.map((name) => {
