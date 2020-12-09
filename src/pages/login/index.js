@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import { Form, Col, InputGroup, Button, FormControl } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faKey, faUser } from '@fortawesome/free-solid-svg-icons';
 import { setCookie } from '../../utils/cookie';
 import { authService } from '../../services';
 
@@ -29,6 +33,41 @@ const Login = () => {
   return (
     <div className="loginPage">
       <h2> Login Page</h2>
+      <Form>
+        <Form.Row className="align-items-center">
+          <Col xs="auto">
+            <Form.Label htmlFor="inlineFormInputGroup" srOnly>
+              Username
+            </Form.Label>
+            <InputGroup className="mb-2">
+              <InputGroup.Prepend>
+                <InputGroup.Text>
+                  <FontAwesomeIcon icon={faUser} />
+                </InputGroup.Text>
+              </InputGroup.Prepend>
+              <FormControl id="inlineFormInputGroup" placeholder="Username" />
+            </InputGroup>
+          </Col>
+          <Col xs="auto">
+            <Form.Label htmlFor="inlineFormInputGroup" srOnly>
+              Username
+            </Form.Label>
+            <InputGroup className="mb-2">
+              <InputGroup.Prepend>
+                <InputGroup.Text>
+                  <FontAwesomeIcon icon={faKey} />
+                </InputGroup.Text>
+              </InputGroup.Prepend>
+              <Form.Control type="password" placeholder="Password" />
+            </InputGroup>
+          </Col>
+          <Col xs="auto">
+            <Button type="submit" className="mb-2">
+              Submit
+            </Button>
+          </Col>
+        </Form.Row>
+      </Form>
       <form
         className="login_form"
         onSubmit={(e) => {
