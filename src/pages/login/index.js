@@ -32,9 +32,15 @@ const Login = () => {
 
   return (
     <div className="loginPage">
-      <h2> Login Page</h2>
-      <Form>
-        <Form.Row className="align-items-center">
+      <h2>Login Page</h2>
+      <Form
+        className="login_form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          onSubmitLogin();
+        }}
+      >
+        <Form.Row className="justify-content-center">
           <Col xs="auto">
             <Form.Label htmlFor="inlineFormInputGroup" srOnly>
               Username
@@ -45,12 +51,24 @@ const Login = () => {
                   <FontAwesomeIcon icon={faUser} />
                 </InputGroup.Text>
               </InputGroup.Prepend>
-              <FormControl id="inlineFormInputGroup" placeholder="Username" />
+              <FormControl
+                id="inlineFormInputGroup"
+                placeholder="Username"
+                type="text"
+                value={username}
+                onChange={(e) => {
+                  setUsername(e.target.value);
+                }}
+              />
             </InputGroup>
           </Col>
           <Col xs="auto">
-            <Form.Label htmlFor="inlineFormInputGroup" srOnly>
-              Username
+            <Form.Label
+              htmlFor="inlineFormInputGroup"
+              srOnly
+              className="text-center"
+            >
+              Password
             </Form.Label>
             <InputGroup className="mb-2">
               <InputGroup.Prepend>
@@ -58,45 +76,28 @@ const Login = () => {
                   <FontAwesomeIcon icon={faKey} />
                 </InputGroup.Text>
               </InputGroup.Prepend>
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+              />
             </InputGroup>
           </Col>
           <Col xs="auto">
-            <Button type="submit" className="mb-2">
+            <Button
+              type="submit"
+              className="mb-2"
+              value="Submit"
+              disabled={isLoginLoading}
+            >
               Submit
             </Button>
           </Col>
         </Form.Row>
       </Form>
-      <form
-        className="login_form"
-        onSubmit={(e) => {
-          e.preventDefault();
-          onSubmitLogin();
-        }}
-      >
-        <label htmlFor="username">
-          Username :
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => {
-              setUsername(e.target.value);
-            }}
-          />
-        </label>
-        <label htmlFor="password">
-          Password :
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-            }}
-          />
-        </label>
-        <input type="submit" value="Submit" disabled={isLoginLoading} />
-      </form>
     </div>
   );
 };

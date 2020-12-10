@@ -24,7 +24,11 @@
 .loginPage {
   width: 100%;
 }
-.login_form {
+
+.login_form .form-row {
+  display: block;
+  margin: 0 auto;
+  width: 30%;
 }
 .login_form label input {
   display: block;

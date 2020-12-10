@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { LoopCircleLoading } from 'react-loadingg';
 import { userService } from '../services';
 import { getCookie } from '../utils/cookie';
 
@@ -29,7 +30,9 @@ const Profile = () => {
     <div>
       <h1> My Profile!</h1>
       {userDataLoading ? (
-        <span>Loading...</span>
+        <span>
+          <LoopCircleLoading />
+        </span>
       ) : (
         <div>
           <p>{`name : ${name}`}</p>
