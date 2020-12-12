@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { setCookie } from '../../utils/cookie';
 import { authService } from '../../services';
 
@@ -28,7 +29,7 @@ const Login = () => {
 
   return (
     <div className="loginPage">
-      <h2> Login Page</h2>
+      <h1>Login Page</h1>
       <form
         className="login_form"
         onSubmit={(e) => {
