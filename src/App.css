@@ -24,9 +24,22 @@
 .loginPage {
   width: 100%;
 }
-.login_form {
+
+.login_form .form-row {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
 }
+
+.login_form button {
+  width: 100%;
+}
+
 .login_form label input {
   display: block;
   margin-bottom: 10px;
+}
+
+.loginPage .card {
+  width: 400px !important;
 }

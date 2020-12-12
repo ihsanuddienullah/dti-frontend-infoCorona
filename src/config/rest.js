@@ -1,7 +1,8 @@
 export default {
-  LOGIN: '/auth/login',
-  REGISTER: 'auth/register',
-  USERBYID: (userId) => {
-    return `users/${userId}`;
-  },
+  LOGIN: '/login',
+  PRODUCT: '/product',
+  // REGISTER: 'auth/register',
+  // USERBYID: (userId) => {
+  //   return `users/${userId}`;
+  // },
 };
