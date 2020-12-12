@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { CommonLoading } from 'react-loadingg';
 import { userService } from '../services';
 import { getCookie } from '../utils/cookie';
 
@@ -30,9 +29,7 @@ const Profile = () => {
     <div>
       <h1> My Profile!</h1>
       {userDataLoading ? (
-        <span>
-          <CommonLoading />
-        </span>
+        <span>Loading...</span>
       ) : (
         <div>
           <p>{`name : ${name}`}</p>

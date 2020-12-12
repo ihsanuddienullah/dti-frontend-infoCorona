@@ -1,20 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { CommonLoading } from 'react-loadingg';
+import { Card, Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import app from '../../services/firebase';
 import 'firebase/database';
 
 const NewsItem = ({ news }) => {
-  const { date, activity } = news[0];
+  const { activity } = news[0];
   return (
     <div>
-      <h3>{date}</h3>
+      {/* <h3>{date}</h3> */}
       {activity.map((data) => {
         return (
           <div key={data.url}>
-            <a href={data.url}>
-              <h5>{data.title}</h5>
-            </a>
-            <p>{data.desc}</p>
+            <Card className="text-center">
+              <Card.Body>
+                <Card.Title>{data.title}</Card.Title>
+                <Card.Text>{data.desc}</Card.Text>
+                <a href={data.url}>
+                  <Button variant="primary">Baca Selengkapnya</Button>
+                </a>
+              </Card.Body>
+            </Card>
+            <br />
           </div>
         );
       })}
@@ -46,7 +55,7 @@ const DetailDate = () => {
       {!isLoading && news.length > 0 ? (
         <NewsItem news={news} />
       ) : (
-        <p>loading</p>
+        <CommonLoading />
       )}
     </div>
   );
