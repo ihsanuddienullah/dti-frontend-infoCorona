@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { LoopCircleLoading } from 'react-loadingg';
+import { CommonLoading } from 'react-loadingg';
 import { Card, Button } from 'react-bootstrap';
 import app from '../../services/firebase';
 import 'firebase/database';
@@ -28,7 +28,7 @@ const CoronaNews = () => {
     <div>
       <h2>data corona</h2>
       {isLoading ? (
-        <LoopCircleLoading />
+        <CommonLoading />
       ) : (
         news.map((data, index) => {
           NewsAct = data.activity;

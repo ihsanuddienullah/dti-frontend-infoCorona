@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { LoopCircleLoading } from 'react-loadingg';
+import { CommonLoading } from 'react-loadingg';
 import { userService } from '../services';
 import { getCookie } from '../utils/cookie';
 
@@ -31,7 +31,7 @@ const Profile = () => {
       <h1> My Profile!</h1>
       {userDataLoading ? (
         <span>
-          <LoopCircleLoading />
+          <CommonLoading />
         </span>
       ) : (
         <div>

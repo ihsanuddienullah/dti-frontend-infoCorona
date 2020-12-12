@@ -18,7 +18,9 @@ const Login = () => {
       .login(username, password)
       .then((res) => {
         const cookieToken = res.data.token;
-        const cookieUser = res.data.user;
+        const cookieUser = res.data.userId;
+        // const cookieToken = res.token;
+        // const cookieUser = res.userId;
         setCookie('userData', JSON.stringify(cookieUser), 10000);
         setCookie('token', JSON.stringify(cookieToken), 10000);
       })
