@@ -111,7 +111,7 @@ const Login = () => {
                   value="Submit"
                   disabled={isLoginLoading}
                 >
-                  Submit
+                  Login
                 </Button>
               </Col>
             </Form.Row>
